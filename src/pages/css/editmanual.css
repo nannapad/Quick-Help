@@ -1,0 +1,335 @@
+/* Google Forms-inspired Manual Edit Page */
+
+.edit-manual-container {
+  min-height: 100vh;
+  padding: 24px 16px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.edit-manual-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  max-width: 770px;
+  margin: 0 auto;
+}
+
+.edit-manual-card .card-header {
+  background: var(--bg-light);
+  border: none;
+  border-radius: 8px;
+  border-top: 8px solid var(--primary);
+  padding: 32px 24px 24px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 1px rgba(0, 0, 0, 0.08);
+}
+
+.edit-manual-title {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+  color: var(--text);
+  letter-spacing: 0;
+  line-height: 2.5rem;
+}
+
+.edit-manual-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+  font-weight: 400;
+}
+
+.edit-manual-card .card-body {
+  padding: 0;
+  background: transparent;
+}
+
+/* Form Group - Google Forms style */
+.form-group {
+  background: var(--bg-light);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 1px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease;
+}
+
+.form-group:hover {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 3px rgba(0, 0, 0, 0.12);
+}
+
+.form-group:focus-within {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* Form Labels */
+.form-label {
+  font-weight: 400;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 1rem;
+  display: block;
+  line-height: 1.5;
+}
+
+.required {
+  color: var(--danger);
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+/* Form Inputs */
+.form-input {
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  padding: 8px 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+  width: 100%;
+  font-family: inherit;
+}
+
+.form-input:hover {
+  border-bottom-color: var(--text);
+}
+
+.form-input:focus {
+  border-bottom: 2px solid var(--primary);
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  padding-bottom: 7px;
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+  opacity: 1;
+  font-weight: 400;
+}
+
+/* Alert Styles */
+.edit-manual-container .alert {
+  border-radius: 8px;
+  border: none;
+  padding: 16px 20px;
+  font-size: 0.875rem;
+  background: var(--bg-light);
+  margin-bottom: 12px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 1px rgba(0, 0, 0, 0.08);
+}
+
+.edit-manual-container .alert-danger {
+  background: var(--bg-light);
+  color: var(--danger);
+  border-left: 4px solid var(--danger);
+}
+
+.edit-manual-container .alert-success {
+  background: var(--bg-light);
+  color: var(--success);
+  border-left: 4px solid var(--success);
+}
+
+.edit-manual-container .alert-info {
+  background: var(--bg-light);
+  color: var(--info);
+  border-left: 4px solid var(--info);
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  margin-top: 12px;
+  background: var(--bg-light);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 1px rgba(0, 0, 0, 0.08);
+}
+
+.cancel-btn,
+.submit-btn {
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
+}
+
+.cancel-btn {
+  background: transparent;
+  color: var(--primary);
+  border: none;
+}
+
+.cancel-btn:hover {
+  background: var(--bg);
+}
+
+.submit-btn {
+  background: var(--primary);
+  color: var(--bg-light);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 1px rgba(0, 0, 0, 0.08);
+}
+
+.submit-btn:hover {
+  background: var(--highlight);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 3px rgba(0, 0, 0, 0.12);
+}
+
+.submit-btn:active {
+  background: var(--primary);
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+/* Textarea specific styling */
+textarea.form-input {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+  line-height: 1.5;
+  padding: 8px 0;
+}
+
+/* Select specific styling */
+select.form-input {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%235f6368' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  padding-right: 24px;
+  border-bottom: 1px solid var(--border);
+  background-color: transparent;
+}
+
+select.form-input:hover {
+  border-bottom-color: var(--text);
+}
+
+select.form-input:focus {
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 7px;
+}
+
+/* Two column layout for smaller inputs */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  background: var(--bg-light);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 1px rgba(0, 0, 0, 0.08);
+}
+
+.form-row:hover {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 3px rgba(0, 0, 0, 0.12);
+}
+
+.form-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Helper text */
+.form-helper {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* Section divider */
+.section-divider {
+  height: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .edit-manual-container {
+    padding: 16px 12px;
+  }
+
+  .edit-manual-card .card-header {
+    padding: 24px 20px 20px;
+  }
+
+  .edit-manual-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .form-group,
+  .form-row {
+    padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .form-actions {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .cancel-btn,
+  .submit-btn {
+    flex: 0 1 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .edit-manual-title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .edit-manual-subtitle {
+    font-size: 0.8125rem;
+  }
+
+  .form-group,
+  .form-row {
+    padding: 16px;
+  }
+
+  .form-actions {
+    padding: 16px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .edit-manual-container {
+    background: var(--bg-light);
+  }
+
+  .form-actions {
+    display: none;
+  }
+}
